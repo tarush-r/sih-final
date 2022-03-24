@@ -1,10 +1,13 @@
 # Smart India Hackathon 2022
 
-+ Problem statement: [e-buddy for rescued child labour](https://sih.gov.in/sih2022PS)
 
 <img src = "https://firebasestorage.googleapis.com/v0/b/sih-2022-2cd77.appspot.com/o/sihhh.PNG?alt=media&token=5a16a7e2-967d-4fce-bbc6-fc15aec7c22d">
 <br>
 <img src = "https://firebasestorage.googleapis.com/v0/b/sih-2022-2cd77.appspot.com/o/kjjjjjjjjj.PNG?alt=media&token=c2b367a7-2b0d-4cc1-8259-d3c419f7c907">
+
++ Problem statement: [e-buddy for rescued child labour](https://sih.gov.in/sih2022PS)
+
+"The Platform for Effective Enforcement for No Child Labour (PENCiL) Portal of the Ministry of Labour & Employment is an online platform that aims at engaging the Central Government, State Government, District, Civil Society and the public at large in eradicating Child Labour to achieve the target of child labour free society. Complaints can also be lodged on this portal if child labour is found in any area. Once the Child Labour is identified they are rescued and rehabilitated by providing basic facilities like, education, scholarship/stipend by the government. To take forward the campaign of ‘No Child Labour’ to the doorsteps of every citizen in the country, there is a necessity to have an IT enabled architecture in place integrating with the existing PENCil Portal. An integrated approach across various stakeholders including Central Ministries and State Governments is required through which Child Labour can be prevented and also the rescued children can be effectively monitored and tracked in the country. The participants should create a system that integrated with PENCiL portal, various systems like Dept of education, Banks, Aadhar etc to varify the movement, education, money transfers to, transctions related to a rescued child and detect any need for intervention to ensude well-being of a rescued child. The participants can go and enable the child to avail new schemes from either government or private firms for their benefit"
 
 Team – <b>Trojan Hex</b>
 
