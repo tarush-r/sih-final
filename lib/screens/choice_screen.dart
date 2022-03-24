@@ -16,13 +16,17 @@ class _ChoiceScreenState extends State<ChoiceScreen> {
       ),
       body: Container(
         width: MediaQuery.of(context).size.width,
-        child: Stack(
+        child: Column(
           children: [
-            // Container(
-            //     child: Image.asset(
-            //   'background.png',
-            //   fit: BoxFit.fill,
-            // )),
+
+            Container(
+              child: Image.network("https://static.vecteezy.com/system/resources/previews/002/164/492/large_2x/cute-kids-boy-and-girl-study-together-free-vector.jpg",
+              height: 300.0,
+             fit: BoxFit.fill,),
+
+            ),
+            Text("E- Buddy Rescue", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),),
+
             Align(
               alignment: Alignment.bottomCenter,
               child: Container(
@@ -78,7 +82,7 @@ class _ChoiceScreenState extends State<ChoiceScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => DpsDashboardScreen(
+                                builder: (context) => HomePageDPS(
                                     // childId: childId,
                                     )),
                           );

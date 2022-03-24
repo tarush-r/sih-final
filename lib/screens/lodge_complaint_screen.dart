@@ -142,7 +142,6 @@ class _LodgeComplaintState extends State<LodgeComplaint> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.amber[400],
         leading: GestureDetector(
             child: Icon(Icons.arrow_back_ios),
             onTap: () {
@@ -184,7 +183,7 @@ class _LodgeComplaintState extends State<LodgeComplaint> {
                         children: [
                           makeInput(childNameController,
                               label: "Child Name",
-                              hintText: "John Doe",
+                              hintText: "Raj Kumar",
                               iconValue: Icons.person),
                           SizedBox(
                             height: 25,
@@ -207,14 +206,16 @@ class _LodgeComplaintState extends State<LodgeComplaint> {
                                   "Upload proof",
                                   textAlign: TextAlign.left,
                                   style: TextStyle(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w400,
+                                      fontSize: 25,
+                                      fontWeight: FontWeight.bold,
                                       color: Colors.black87),
                                 ),
                                 const SizedBox(height: 20),
-                                Row(
+                                Row( mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     IconButton(
+                                      iconSize: 50.0,
+
                                         onPressed: () async {
                                           attendanceProof =
                                               await _getFromCamera();
@@ -222,6 +223,7 @@ class _LodgeComplaintState extends State<LodgeComplaint> {
                                         icon: Icon(Icons.camera_alt)),
                                     Text("or"),
                                     IconButton(
+                                        iconSize: 50.0,
                                         onPressed: () async {
                                           uploadingImage = true;
                                           setState(() {});
@@ -278,7 +280,9 @@ class _LodgeComplaintState extends State<LodgeComplaint> {
                               iconValue: Icons.phone),
                           SizedBox(height: 25),
                           DropdownButton(
-                            hint: Text('Please choose their gender'),
+                            hint: Text('Please choose their gender', style: TextStyle(
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold,)),
                             value: _selectedType,
                             onChanged: (newValue) {
                               setState(() {
@@ -287,12 +291,14 @@ class _LodgeComplaintState extends State<LodgeComplaint> {
                             },
                             items: _typeList.map((type) {
                               return DropdownMenuItem(
-                                child: new Text(type),
+                                child: new Text(type,style: TextStyle(
+                                  fontSize: 20,
+                                  )),
                                 value: type,
                               );
                             }).toList(),
                           ),
-                          SizedBox(height: 150),
+                          SizedBox(height: 110),
                         ],
                       ),
                     ),
@@ -387,10 +393,11 @@ Widget makeInput(TextEditingController controller,
       Text(
         label,
         style: TextStyle(
-            fontSize: 15, fontWeight: FontWeight.w400, color: Colors.black87),
+            fontSize: 25,
+            fontWeight: FontWeight.bold, color: Colors.black87),
       ),
       SizedBox(
-        height: 10,
+        height: 30,
       ),
       Container(
           height: 50,

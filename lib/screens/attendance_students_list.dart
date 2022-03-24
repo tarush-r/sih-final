@@ -30,15 +30,17 @@ class _DpsAttendanceState extends State<AttendanceStudentsList> {
         centerTitle: true,
         automaticallyImplyLeading: true,
         actions: [Padding(padding: EdgeInsets.all(8))],
-        backgroundColor: Colors.amber,
+
       ),
       body: Container(
         height: double.infinity,
         decoration: BoxDecoration(
-            gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [Colors.white, Colors.grey])),
+          color: Colors.black
+            // gradient: LinearGradient(
+            //     begin: Alignment.topCenter,
+            //     end: Alignment.bottomCenter,
+            //     colors: [Colors.white, Colors.grey])
+          ),
         child: StreamBuilder(
             stream: childDetailsRef.snapshots(),
             initialData: [],

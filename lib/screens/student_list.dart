@@ -61,7 +61,7 @@ class ListWidget extends StatelessWidget {
     final planetCard = new Container(
       margin: const EdgeInsets.only(left: 45.0, right: 24.0),
       decoration: new BoxDecoration(
-        color: Color(0xFF8685E5),
+        color: Colors.white,
         shape: BoxShape.rectangle,
         borderRadius: new BorderRadius.circular(8.0),
         boxShadow: <BoxShadow>[
@@ -80,7 +80,7 @@ class ListWidget extends StatelessWidget {
             new Text(
               name,
               style: TextStyle(
-                  color: Color(0xFFFFFFFF),
+                  color: Color(0xFF130101),
                   fontFamily: 'Poppins',
                   fontWeight: FontWeight.w600,
                   fontSize: 24.0),
@@ -88,37 +88,37 @@ class ListWidget extends StatelessWidget {
             new Text(
               "Enrolled On: $enrolledDate",
               style: TextStyle(
-                  color: Color(0x66FFFFFF),
+                  color: Color(0x66000000),
                   fontFamily: 'Poppins',
-                  fontWeight: FontWeight.w300,
+                  fontWeight: FontWeight.bold,
                   fontSize: 14.0),
             ),
             new Container(
-                color: const Color(0xFF00C6FF),
+                color: const Color(0xFF025165),
                 width: 24.0,
                 height: 1.0,
                 margin: const EdgeInsets.symmetric(vertical: 8.0)),
             new Row(
               children: <Widget>[
                 new Icon(Icons.location_on,
-                    size: 14.0, color: Color(0x66FFFFFF)),
+                    size: 14.0, color: Color(0x66000000)),
                 new Text(
                   "Age: $age",
                   style: TextStyle(
-                      color: Color(0x66FFFFFF),
+                      color: Color(0x66000000),
                       fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w300,
+                      fontWeight: FontWeight.bold,
                       fontSize: 12.0),
                 ),
                 new Container(width: 24.0),
                 new Icon(Icons.flight_land,
-                    size: 14.0, color: Color(0x66FFFFFF)),
+                    size: 14.0, color: Color(0x66000000)),
                 new Text(
                   "Text 3",
                   style: TextStyle(
-                      color: Color(0x66FFFFFF),
+                      color: Color(0x660E0E0E),
                       fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w300,
+                      fontWeight: FontWeight.bold,
                       fontSize: 12.0),
                 ),
               ],
