@@ -109,6 +109,17 @@ class _LodgeComplaintState extends State<LodgeComplaint> {
     return imageFile;
   }
 
+  bool validate() {
+    if (globalImageUrl == null ||
+        _selectedType == null ||
+        childNameController.text.isEmpty ||
+        mobileNumberController.text.isEmpty || int.tryParse(mobileNumberController.text)==null) {
+      showInSnackBar(context, "Fill all the fields");
+      return false;
+    }
+    return true;
+  }
+
   Future<Map> getImageMetadata(File image) async {
     double latitude = 0;
     double longitude = 0;
@@ -316,22 +327,25 @@ class _LodgeComplaintState extends State<LodgeComplaint> {
                                     print(_selectedType);
                                     print(globalImageUrl);
                                     print(getImageMetadata(globalFile));
-                                    Map locationResult =
-                                        await getImageMetadata(globalFile);
-                                    print(locationResult);
-                                    complaintDetailsRef.add({
-                                      'child_id': Uuid().v4(),
-                                      'child_name': childNameController.text,
-                                      'complaint_owner_id': Uuid().v4(),
-                                      'complaint_owner_number':
-                                          mobileNumberController.text,
-                                      'location': locationResult,
-                                      'child_gender': _selectedType,
-                                      'image': globalImageUrl,
-                                      'is_rescued': false,
-                                      'is_approved': false,
-                                      'created_on': DateTime.now()
-                                    });
+
+                                    // print(locationResult);
+                                    if (validate()) {
+                                      Map locationResult =
+                                          await getImageMetadata(globalFile);
+                                      complaintDetailsRef.add({
+                                        'child_id': Uuid().v4(),
+                                        'child_name': childNameController.text,
+                                        'complaint_owner_id': Uuid().v4(),
+                                        'complaint_owner_number':
+                                            mobileNumberController.text,
+                                        'location': locationResult,
+                                        'child_gender': _selectedType,
+                                        'image': globalImageUrl,
+                                        'is_rescued': false,
+                                        'is_approved': false,
+                                        'created_on': DateTime.now()
+                                      });
+                                    }
                                   },
                                   shape: RoundedRectangleBorder(
                                       borderRadius:
