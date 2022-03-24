@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "72884755470",
+    "project_id": "sih-final-cccd6",
+    "storage_bucket": "sih-final-cccd6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:72884755470:android:489507abc991f2d242705f",
+        "android_client_info": {
+          "package_name": "com.example.sih_final"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "72884755470-38oghns2q2gfv64avf4nqq3j78aq9e2e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbwd5G0lgAsJb9VIoZqNKS1J1V1VtKLik"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "72884755470-38oghns2q2gfv64avf4nqq3j78aq9e2e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
