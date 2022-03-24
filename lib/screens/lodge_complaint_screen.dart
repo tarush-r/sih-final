@@ -41,6 +41,18 @@ class _LodgeComplaintState extends State<LodgeComplaint> {
     return imageFile;
   }
 
+  bool validate() {
+    if (childNameController.text.isEmpty ||
+        globalImageUrl == null || globalImageUrl.isEmpty ||
+        mobileNumberController.text.isEmpty ||
+        int.tryParse(mobileNumberController.text) == null ||
+        _selectedType.isEmpty) {
+      showInSnackBar(context, 'Enter all the fields in proper format');
+      return false;
+    }
+    return true;
+  }
+
   Future<bool> detectFaces(String imageURL) async {
     const url = "https://api-us.faceplusplus.com/facepp/v3/detect";
     var body = {
@@ -211,11 +223,11 @@ class _LodgeComplaintState extends State<LodgeComplaint> {
                                       color: Colors.black87),
                                 ),
                                 const SizedBox(height: 20),
-                                Row( mainAxisAlignment: MainAxisAlignment.center,
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     IconButton(
-                                      iconSize: 50.0,
-
+                                        iconSize: 50.0,
                                         onPressed: () async {
                                           attendanceProof =
                                               await _getFromCamera();
@@ -280,9 +292,11 @@ class _LodgeComplaintState extends State<LodgeComplaint> {
                               iconValue: Icons.phone),
                           SizedBox(height: 25),
                           DropdownButton(
-                            hint: Text('Please choose their gender', style: TextStyle(
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold,)),
+                            hint: Text('Please choose their gender',
+                                style: TextStyle(
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold,
+                                )),
                             value: _selectedType,
                             onChanged: (newValue) {
                               setState(() {
@@ -291,9 +305,10 @@ class _LodgeComplaintState extends State<LodgeComplaint> {
                             },
                             items: _typeList.map((type) {
                               return DropdownMenuItem(
-                                child: new Text(type,style: TextStyle(
-                                  fontSize: 20,
-                                  )),
+                                child: new Text(type,
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                    )),
                                 value: type,
                               );
                             }).toList(),
@@ -321,23 +336,25 @@ class _LodgeComplaintState extends State<LodgeComplaint> {
                                     print(mobileNumberController.text);
                                     print(_selectedType);
                                     print(globalImageUrl);
-                                    print(getImageMetadata(globalFile));
-                                    Map locationResult =
-                                        await getImageMetadata(globalFile);
-                                    print(locationResult);
-                                    complaintDetailsRef.add({
-                                      'child_id': Uuid().v4(),
-                                      'child_name': childNameController.text,
-                                      'complaint_owner_id': Uuid().v4(),
-                                      'complaint_owner_number':
-                                          mobileNumberController.text,
-                                      'location': locationResult,
-                                      'child_gender': _selectedType,
-                                      'image': globalImageUrl,
-                                      'is_rescued': false,
-                                      'is_approved': false,
-                                      'created_on': DateTime.now()
-                                    });
+                                    // print(getImageMetadata(globalFile));
+                                    if (validate()) {
+                                      Map locationResult =
+                                          await getImageMetadata(globalFile);
+                                      print(locationResult);
+                                      complaintDetailsRef.add({
+                                        'child_id': Uuid().v4(),
+                                        'child_name': childNameController.text,
+                                        'complaint_owner_id': Uuid().v4(),
+                                        'complaint_owner_number':
+                                            mobileNumberController.text,
+                                        'location': locationResult,
+                                        'child_gender': _selectedType,
+                                        'image': globalImageUrl,
+                                        'is_rescued': false,
+                                        'is_approved': false,
+                                        'created_on': DateTime.now()
+                                      });
+                                    }
                                   },
                                   shape: RoundedRectangleBorder(
                                       borderRadius:
@@ -393,8 +410,7 @@ Widget makeInput(TextEditingController controller,
       Text(
         label,
         style: TextStyle(
-            fontSize: 25,
-            fontWeight: FontWeight.bold, color: Colors.black87),
+            fontSize: 25, fontWeight: FontWeight.bold, color: Colors.black87),
       ),
       SizedBox(
         height: 30,
